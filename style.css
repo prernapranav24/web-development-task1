@@ -1,0 +1,196 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.container {
+  align-self: center;
+  position: relative;
+  max-width: 800px;
+  margin: 5px auto;
+  margin: 1rem;
+  border: 1px solid black;
+  overflow: hidden;
+
+  .ribbon {
+    margin-left: auto;
+    right: -4px;
+    width: 90px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ribbon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d04eea;
+    /* Ribbon color */
+    /*make your own shape: https: //css-tricks.com/almanac/properties/c/clip-path/ */
+    clip-path: polygon(100% 0%, 100% 50%, 99% 100%, 0% 100%, 25% 50%, 0% 0%);
+  }
+
+
+
+  .company-info {
+    text-align: center;
+    border-radius: 5px;
+    margin: 20px;
+
+    p {
+      margin-top: 10px;
+    }
+
+    .dashed-line {
+      border: none;
+      border-top: 3px dashed #d04eea;
+      margin: 20px 0;
+    }
+  }
+
+  .company-heading {
+    background-color: #d04eea;
+    color: white;
+    padding: 1px 60px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+}
+
+.team-section {
+  .mheader {
+    text-align: center;
+  }
+
+  .team-container-main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+}
+
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .team-heading>h4 {
+    background-color: #d04eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    margin-top: 0px;
+  }
+}
+
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-container.leader-team {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-cont {
+    display: flex;
+    justify-content: center;
+    gap: 0.1rem;
+  }
+}
+
+.member-card {
+  margin: 0 1%;
+  min-width: 160px;
+  background-color: #ffff;
+  padding: 20px;
+  border-radius: 5px;
+
+  img {
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+
+
+
+/* Adjust for smaller screens */
+
+@media (max-width: 668px) {
+  .card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .member-card {
+    display: inline-flex;
+    align-items: center;
+    min-width: 360px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    gap: 1rem;
+
+    img {
+      margin: 0;
+    }
+
+    div {
+      flex-grow: 1;
+    }
+  }
+
+  .team-container.leader-team {
+    /* .card-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        } */
+
+    .flex-cont {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.1rem;
+    }
+  }
+}
